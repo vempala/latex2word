@@ -26,9 +26,9 @@
         }
     }
     $(document).ready(function(){
-        $("#latexContent").val("$$  $$");
+        //$("#latexContent").val("$$  $$");
         $('#latexContent').bind('input propertychange', function() {
-              $("#myoutput").text($("#latexContent").val());
+              $("#myoutput").text("$$" + $("#latexContent").val() + "$$");
              // MathJax.Hub.Queue(["TypeseTextt",MathJax.Hub,"myoutput"]);
               MathJax.Hub.Typeset("myoutput")
         });
@@ -38,7 +38,7 @@
             SelectText("myMathml");
         });
         $("#btnClear").click(function(){
-            $("#latexContent").val("$$  $$");
+            //$("#latexContent").val("$$  $$");
             $("#myoutput").html("<p style='color: grey; font-style: italic;'> The LaTeX will display here ! </p>");
             $("#myMathml").text("");
         });

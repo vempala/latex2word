@@ -53,6 +53,7 @@
         });
         $("#btnShowMathML").click(function(){
             var con =  $(".MJX_Assistive_MathML").html();
+            con = decodeHTMLEntities(con);
             $("#myMathml").text(con);
             SelectText("myMathml");
         });

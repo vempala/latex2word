@@ -52,9 +52,9 @@
              // MathJax.Hub.Queue(["TypeseTextt",MathJax.Hub,"myoutput"]);
          
               MathJax.Hub.Typeset("myoutput"); // kartik undo
-              let textWithHtmlEntities = $("#myoutput").text();
-              let textWithoutHtmlEntities = decodeHTMLEntities(textWithHtmlEntities);
-               $("#myoutput").text(textWithoutHtmlEntities);
+              //let textWithHtmlEntities = $("#myoutput").text();
+              //let textWithoutHtmlEntities = decodeHTMLEntities(textWithHtmlEntities);
+              // $("#myoutput").text(textWithoutHtmlEntities);
         });
         $("#btnShowMathML").click(function(){
             var con =  $(".MJX_Assistive_MathML").html();

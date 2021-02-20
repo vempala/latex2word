@@ -25,36 +25,12 @@
             selection.addRange(range);
         }
     }
-    function decodeHTMLEntities(text) {
-        var entities = [
-            ['amp', '&'],
-            ['apos', '\''],
-            ['#x27', '\''],
-            ['#x2F', '/'],
-            ['#39', '\''],
-            ['#47', '/'],
-            ['lt', '<'],
-            ['gt', '>'],
-            ['nbsp', ' '],
-            ['quot', '"']
-        ];
-
-        for (var i = 0, max = entities.length; i < max; ++i) 
-            text = text.replace(new RegExp('&'+entities[i][0]+';', 'g'), entities[i][1]);
-
-        return text;
-    }
     $(document).ready(function(){
-        $("#latexContent").val("$$  $$");
+        //$("#latexContent").val("$$  $$");
         $('#latexContent').bind('input propertychange', function() {
-              $("#myoutput").text("" + $("#latexContent").val() + "");
-              // kartik $("#myoutput").text("$$" + $("#latexContent").val() + "$$");
+              $("#myoutput").text("$$" + $("#latexContent").val() + "$$");
              // MathJax.Hub.Queue(["TypeseTextt",MathJax.Hub,"myoutput"]);
-         
-              MathJax.Hub.Typeset("myoutput"); // kartik undo
-              //let textWithHtmlEntities = $("#myoutput").text();
-              //let textWithoutHtmlEntities = decodeHTMLEntities(textWithHtmlEntities);
-              // $("#myoutput").text(textWithoutHtmlEntities);
+              MathJax.Hub.Typeset("myoutput")
         });
         $("#btnShowMathML").click(function(){
             var con =  $(".MJX_Assistive_MathML").html();
@@ -62,7 +38,7 @@
             SelectText("myMathml");
         });
         $("#btnClear").click(function(){
-            $("#latexContent").val("$$  $$");
+            //$("#latexContent").val("$$  $$");
             $("#myoutput").html("<p style='color: grey; font-style: italic;'> The LaTeX will display here ! </p>");
             $("#myMathml").text("");
         });

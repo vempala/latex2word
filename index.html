@@ -31,7 +31,8 @@
               $("#myoutput").text("" + $("#latexContent").val() + "");
               // kartik $("#myoutput").text("$$" + $("#latexContent").val() + "$$");
              // MathJax.Hub.Queue(["TypeseTextt",MathJax.Hub,"myoutput"]);
-              MathJax.Hub.Typeset("myoutput")
+         
+              // MathJax.Hub.Typeset("myoutput"); // kartik undo
         });
         $("#btnShowMathML").click(function(){
             var con =  $(".MJX_Assistive_MathML").html();
